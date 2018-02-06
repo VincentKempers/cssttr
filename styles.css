@@ -1,0 +1,150 @@
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"),
+   local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"),
+     local("Ubuntu Light"),
+      local("Segoe UI Light"),
+       local("Roboto-Light"),
+        local("DroidSans"),
+         local("Tahoma");
+}
+
+body {
+  margin: 0;
+  font-family: 'system';
+}
+
+body > h1:first-of-type , nav > h1 {
+  display: none;
+}
+
+nav {
+  background-color: black;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+nav > ul > li   {
+  justify-self: center;
+  align-self: center;
+  padding: 1em;
+}
+
+ul li > ul   {
+  display: none;
+}
+
+ul li:focus > ul:focus-within   {
+  display: block;
+}
+
+nav > ul > li > a {
+  color: white;
+}
+
+form[method="post"] {
+  margin: 1em 0 1em 0;
+  display: grid;
+  grid-template-columns: 10% 20% 25% 25% 20% 10%;
+}
+
+form > label {
+  grid-column-start: 2;
+  grid-column-end: 2; 
+}
+
+form > input[type="email"], input[type="password"] {
+  grid-column-start: 3;
+  grid-column-end: 5; 
+}
+
+form > input[type="checkbox"] {
+  grid-column-start: 2;
+  grid-column-end: 2; 
+}
+
+label[for="field-stay-logged-in"] {
+  grid-column-start: 3;
+  grid-column-end: 5; 
+}
+
+form > a {
+  grid-column-start: 3;
+  grid-column-end: 5; 
+}
+form > button {
+  grid-column-start: 3;
+  grid-column-end: 5; 
+}
+
+main {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  object-fit: cover;
+}
+
+main > section {
+  grid-column-start:2;
+  grid-column-end:2;
+  grid-row-start:1;
+  grid-row-end:1;
+}
+
+main > nav {
+  background-color: initial;
+  grid-column-start:2;
+  grid-column-end:2;
+  grid-row-start:2;
+  grid-row-end:2;
+}
+
+main > article {
+  grid-column-start:2;
+  grid-column-end:2;
+  grid-row-start:3;
+  grid-row-end:3;
+}
+
+main > ol {
+  grid-column-start:2;
+  grid-column-end:2;
+  grid-row-start:4;
+  grid-row-end:4;
+}
+
+main > form {
+  grid-column-start:2;
+  grid-column-end:2;
+  grid-row-start:5;
+  grid-row-end:5;
+}
+
+main > fieldset {
+  grid-column-start:2;
+  grid-column-end:2;
+  grid-row-start:6;
+  grid-row-end:6;
+}
+
+
+
+article > img {
+  width:auto;
+}
+
+img {
+  width: 50vw;
+}
+
+svg {  
+  width: 10vw;
+}
+
