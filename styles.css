@@ -12,21 +12,23 @@
          local("Tahoma");
 }
 
-body {
+*{
   margin: 0;
   font-family: 'system';
 }
+
 
 body > h1:first-of-type , nav > h1 {
   display: none;
 }
 
-nav {
-  background-color: black;
+body > nav:first-of-type {
+  position: absolute;
 }
 
 ul {
   margin: 0;
+  padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -38,16 +40,53 @@ nav > ul > li   {
   padding: 1em;
 }
 
+
+
 ul li > ul   {
   display: none;
 }
 
-ul li:focus > ul:focus-within   {
+ul li:focus-within > ul   {
   display: block;
+  position: absolute;
 }
 
-nav > ul > li > a {
-  color: white;
+nav ul li > a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 0.1rem solid black;
+}
+
+a[href="/products"] {
+  color: black;
+  text-decoration: none;
+  border-bottom: 0.1rem dashed black;
+}
+
+a[href="/products"]:focus {
+  padding-bottom: 0.2em;
+}
+
+
+
+main:first-of-type {
+  background: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
+  height:100vh;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > h1 {
+
+
+}
+
+main:last-of-type {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  object-fit: cover;
 }
 
 form[method="post"] {
@@ -58,38 +97,33 @@ form[method="post"] {
 
 form > label {
   grid-column-start: 2;
-  grid-column-end: 2; 
+  grid-column-end: 2;
 }
 
 form > input[type="email"], input[type="password"] {
   grid-column-start: 3;
-  grid-column-end: 5; 
+  grid-column-end: 5;
 }
 
 form > input[type="checkbox"] {
   grid-column-start: 2;
-  grid-column-end: 2; 
+  grid-column-end: 2;
 }
 
 label[for="field-stay-logged-in"] {
   grid-column-start: 3;
-  grid-column-end: 5; 
+  grid-column-end: 5;
 }
 
 form > a {
   grid-column-start: 3;
-  grid-column-end: 5; 
+  grid-column-end: 5;
 }
 form > button {
   grid-column-start: 3;
-  grid-column-end: 5; 
+  grid-column-end: 5;
 }
-
-main {
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  object-fit: cover;
-}
+/*  grid mobile */
 
 main > section {
   grid-column-start:2;
@@ -144,7 +178,6 @@ img {
   width: 50vw;
 }
 
-svg {  
+svg {
   width: 10vw;
 }
-
