@@ -1,3 +1,24 @@
+/*
+  things to Add
+  @TODO
+  - [x] variable
+  - [] background-clip: padding-box;
+  - [] background: url(tr.png) top right, url(br.png) bottom right,
+                url(bl.png) bottom left
+    background-size: 2em 2em;
+    background-repeat: no-repeat;
+  - [] every media query adds overhead <- watch out for this
+  - [] background: yellowgreen; box-shadow: 0 0 0 10px #655,
+            0 0 0 15px deeppink,
+            0 2px 5px 15px rgba(0,0,0,.6);
+  - [] background-origin: content-box;
+  - [] calc(100% - 20px) calc(100% - 10px);
+  - [] border-radius: .8em; padding: 1em;
+       box-shadow: 0 0 0 .6em #655; outline: .6em solid #655;
+  - [] background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+ */
+
+
 @font-face {
   font-family: system;
   font-style: normal;
@@ -10,6 +31,11 @@
        local("Roboto-Light"),
         local("DroidSans"),
          local("Tahoma");
+}
+
+:root {
+  --bg-color-one: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
+  --bg-color-two: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1));
 }
 
 *{
@@ -37,7 +63,7 @@ ul {
 nav > ul > li   {
   justify-self: center;
   align-self: center;
-  padding: 0.8em;
+  padding: .8em;
 }
 
 
@@ -53,22 +79,22 @@ ul li:focus-within > ul   {
 nav ul li > a {
   color: black;
   text-decoration: none;
-  border-bottom: 0.1rem solid black;
+  border-bottom: .1rem solid black;
 }
 
 a[href="/products"] {
   color: black;
   text-decoration: none;
-  border-bottom: 0.1rem dashed black;
+  border-bottom: .1rem dashed black;
 }
 
 a[href="/products"]:focus {
-  padding-bottom: 0.2em;
+  padding-bottom: .2em;
 }
 
 
 header{
-  background: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
+  background: var(--bg-color-one);
   height:100vh;
   width:100vw;
   display: flex;
@@ -88,7 +114,7 @@ article > h1, img, p  {
 }
 
 main > nav {
-  background: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1) );
+  background: var(--bg-color-two);
   width: 100vw;
   display: grid;
   grid-template-columns: 8% auto 8%;
@@ -104,23 +130,6 @@ main nav > h1, progress, p, ol {
 nav article > img  {
   width: 60%;
 }
-
-/*
-Media query
-
-nav article > h1 {
-  grid-column-start: 3;
-  grid-column-end: 3;
-}
-
-nav article > img {
-  grid-column-start: 2;
-  grid-column-end: 2;
-} */
-
-
-
-
 
 article {
   display: grid;
@@ -148,34 +157,37 @@ figcaption {
 section {
   background: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
   padding: 2em 0 0 2em;
+  display: grid;
+  grid-template-columns: 8% auto 8%;
 }
 
-main > ol {
-  grid-column-start:2;
-  grid-column-end:2;
-  grid-row-start:4;
-  grid-row-end:4;
+section > ol {
+  list-style: none;
+  padding: 0;
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
 
-main > form {
-  grid-column-start:2;
-  grid-column-end:2;
-  grid-row-start:5;
-  grid-row-end:5;
+section ol > li {
+  background-color: white;
+  max-width: 20em;
+  padding: .9em;
+  margin: 1em;
+  border-radius: 1em;
 }
 
-main > fieldset {
-  grid-column-start:2;
-  grid-column-end:2;
-  grid-row-start:6;
-  grid-row-end:6;
+section > form {
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
 
-main > section {
-  grid-column-start:2;
-  grid-column-end:2;
-  grid-row-start:1;
-  grid-row-end:1;
+section form > button {
+  grid-column-start: 4;
+  grid-column-end: 4;
+}
+
+fieldset {
+  margin: 2em 0 2em 0;
 }
 
 
