@@ -26,7 +26,7 @@ This is an planning that roughly translates what I want to do and what I already
 - [x] Styling the main things
 - [x] Reading paragraphs
 - [x] Applying paragraphs in the design as much as possible
-  - [ ] Background dim
+  - [x] Background dim (on another branch)
   - [x] Blur
   - [x] Vertical align
   - [x] Figure styling
