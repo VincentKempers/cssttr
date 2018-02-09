@@ -1,21 +1,7 @@
 /*
   things to Add
   @TODO
-  - [x] variable
-  - [] background-clip: padding-box;
-  - [] background: url(tr.png) top right, url(br.png) bottom right,
-                url(bl.png) bottom left
-    background-size: 2em 2em;
-    background-repeat: no-repeat;
-  - [] every media query adds overhead <- watch out for this
-  - [] background: yellowgreen; box-shadow: 0 0 0 10px #655,
-            0 0 0 15px deeppink,
-            0 2px 5px 15px rgba(0,0,0,.6);
-  - [] background-origin: content-box;
-  - [] calc(100% - 20px) calc(100% - 10px);
-  - [] border-radius: .8em; padding: 1em;
-       box-shadow: 0 0 0 .6em #655; outline: .6em solid #655;
-  - [] background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+
  */
 
 
@@ -24,13 +10,21 @@
   font-style: normal;
   font-weight: 300;
   src: local(".SFNSText-Light"),
-   local(".HelveticaNeueDeskInterface-Light"),
-    local(".LucidaGrandeUI"),
-     local("Ubuntu Light"),
-      local("Segoe UI Light"),
+       local(".HelveticaNeueDeskInterface-Light"),
+       local(".LucidaGrandeUI"),
+       local("Ubuntu Light"),
+       local("Segoe UI Light"),
        local("Roboto-Light"),
-        local("DroidSans"),
-         local("Tahoma");
+       local("DroidSans"),
+       local("Tahoma");
+}
+
+@font-face {
+  font-family: Ampersand;
+  src: local('Cochin-Italic'),
+       local('Baskerville-Italic');
+  unicode-range: U+26;
+
 }
 
 :root {
@@ -42,7 +36,6 @@
   margin: 0;
   font-family: "system";
 }
-
 
 body > h1:first-of-type, body > nav:first-of-type > h1 {
   display: none;
@@ -82,21 +75,21 @@ nav ul li > a {
   border-bottom: .1rem solid black;
 }
 
-a[href="/products"] {
+[href="/products"] {
   color: black;
   text-decoration: none;
   border-bottom: .1rem dashed black;
 }
 
-a[href="/products"]:focus {
-  padding-bottom: .2em;
+[href="/products"]:focus {
+  padding-bottom: .4em;
 }
 
 
 header{
   background: var(--bg-color-one);
-  height:100vh;
-  width:100vw;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,19 +137,19 @@ article > h1, figure {
 }
 
 figure {
-  display: flex;
-  flex-direction: column;
+  max-width: 20em;
+  max-width: min-content;
   /* justify-content: center; */
   /* align-items: center; */
 }
 
-figcaption {
-  max-width: 20em;
+figure > img {
+  max-width: inherit;
 }
 
 section {
-  background: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
-  padding: 2em 0 0 2em;
+  background: var(--bg-color-one);
+  padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: 8% auto 8%;
 }
@@ -186,12 +179,22 @@ section form > button {
   grid-column-end: 4;
 }
 
+li footer:last-child {
+  text-align: right;
+  font-size: 0.7em;
+}
+
+footer p:last-child::after {
+  /* color: green; */
+  content:'';
+}
+
 fieldset {
   margin: 2em 0 2em 0;
 }
 
 
-form[method="post"] {
+[method="post"] {
   margin: 1em 0 1em 0;
   display: grid;
   grid-template-columns: 10% 20% 25% 25% 20% 10%;
@@ -202,17 +205,17 @@ form > label {
   grid-column-end: 2;
 }
 
-form > input[type="email"], input[type="password"] {
+[type="email"], [type="password"] {
   grid-column-start: 3;
   grid-column-end: 5;
 }
 
-form > input[type="checkbox"] {
+[type="checkbox"] {
   grid-column-start: 2;
   grid-column-end: 2;
 }
 
-label[for="field-stay-logged-in"] {
+[for="field-stay-logged-in"] {
   grid-column-start: 3;
   grid-column-end: 5;
 }
@@ -226,7 +229,6 @@ form > button {
   grid-column-end: 5;
 }
 /*  grid mobile */
-
 
 
 img {
