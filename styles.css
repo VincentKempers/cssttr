@@ -12,9 +12,12 @@
        local("Tahoma");
 }
 
+/* media query for the reduced motion function to stop all transitions*/
+
 @media (reduced-motion) {
   :root {
   --transition: 0;
+  --animation-bounce: 0;
   }
 }
 
@@ -46,6 +49,7 @@
   --bg-color-two: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1));
   --grid-standard-template: 8% auto 8%;
   --transition: 200ms ease;
+  --animation-bounce: animationBounce .2s cubic-bezier(.1,.25,1,.25);
 }
 
 *{
@@ -316,7 +320,7 @@ input {
   font-size: 1em;
   margin-bottom: 1em;
   width: 100%;
-  transition: all ease .2s;
+  transition: var(--transition);
   z-index:2;
 }
 
@@ -334,7 +338,7 @@ input:focus {
 
 [type="email"]:not:focus + #hint {
   transform: scale(5);
-  transition: transform .5s ease;
+  transition: var(--transition);
 }
 
 #hint {
@@ -352,6 +356,10 @@ img {
   left: -999px;
 }
 
+[for="rating-0"],[for="rating-1"],[for="rating-2"],[for="rating-3"]{
+  content: '';
+}
+
 label > svg {
   width: 10vw;
   filter: grayscale(80%) blur(0.3em);
@@ -359,7 +367,8 @@ label > svg {
 
 [name="rating"]:checked  + label > svg {
   filter: none;
-  animation: animationBounce .2s cubic-bezier(.1,.25,1,.25);
+  animation: var(--animation-bounce);
+  /* transform: rotateX(2deg); var(--transform); */
 }
 
 input[type="checkbox"] {
