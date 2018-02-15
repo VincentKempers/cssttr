@@ -19,6 +19,29 @@
   unicode-range: U+26;
 }
 
+@keyframes animationBackground {
+  from {
+    opacity: 0;
+    }
+    to {
+      opacity: 1;
+      background: linear-gradient(40deg, rgba(255, 179, 47, 1.000) 15%, #657 65%, rgba(255, 67, 137, 1.000) 0);
+    }
+}
+
+@keyframes animationBounce {
+  60%, 80%, to {
+    transform: translateY(2em);
+    animation-timing-function: ease;
+    }
+    70% {
+      transform: translateY(1em);
+    }
+    90% {
+      transform: translateY(0em);
+    }
+}
+
 :root {
   --bg-color-one: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
   --bg-color-two: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1));
@@ -52,7 +75,7 @@ nav > ul > li   {
   padding: .8em;
 }
 
-span:first-child{
+h2{
   font-family: Ampersand;
 }
 
@@ -82,15 +105,17 @@ nav ul li > a {
   padding-bottom: .4em;
 }
 
+/* header styling */
+
 header{
   background: var(--bg-color-one);
-  /* background-image: ; */
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/* first Article styling  */
 
 main article:first-of-type > h1, img, p {
   grid-column-start: 2;
@@ -104,11 +129,12 @@ article > h1, img, p  {
 }
 
 main > nav {
-  background: var(--bg-color-two);
-  width: 100vw;
+  background: linear-gradient(19deg, rgba(255, 179, 47, 1.000) 15%, #657 65%, rgba(255, 67, 137, 1.000) 0);
+  background-size: 9% 100%;
+  padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
-  padding: 2em 0 2em 0;
+  height: 50vw;
 }
 
 progress {
@@ -149,11 +175,14 @@ figure > img {
 }
 
 section {
-  background: var(--bg-color-one);
+  background: linear-gradient(190deg, rgba(255, 179, 47, 1.000) 15%, #657 65%, rgba(255, 67, 137, 1.000) 0);
+  background-size: 9% 100%;
   padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
 }
+
+
 
 section > ol {
   list-style: none;
@@ -163,7 +192,7 @@ section > ol {
   grid-column-end: 2;
 }
 
-ol:nth-child(1) > li:nth-child(odd) {
+ol:nth-child(1) > li {
   background-color: rgba(69, 122, 210, .8);
   color: white;
   width: 35vw;
@@ -176,7 +205,7 @@ ol:nth-child(1) > li:nth-child(odd) {
 ol:nth-child(1) > li:nth-child(even) {
   background-color: white;
   color: black;
-  margin-right: 2em;
+  margin-left: 0;
   border-radius: 1em;
   padding: .9em;
   width: 35vw;
@@ -191,9 +220,28 @@ section > form {
   grid-column-end: 2;
 }
 
+[name="field-message"] {
+  resize: none;
+}
+
+[for="field-message"] {
+  background: white;
+}
+
 section form > button {
   grid-column-start: 4;
   grid-column-end: 4;
+}
+
+button[type="submit"] {
+  border-radius: 1rem 1rem 1rem 1rem;
+  outline-radius: 1rem 1rem 1rem 1rem;
+  padding: 1.5em;
+  width: 15em;
+  margin-left: 4em;
+  background-color: black;
+  color: white;
+  border: none;
 }
 
 li footer:last-child {
@@ -201,13 +249,13 @@ li footer:last-child {
   font-size: .7em;
 }
 
-footer p:last-child::after {
-  /* color: green; */
-  content:'';
-}
-
 fieldset {
   margin: 2em 0 2em 0;
+  border: none;
+}
+
+fieldset > legend {
+  display: none;
 }
 
 
@@ -245,6 +293,17 @@ form > button {
   grid-column-start: 3;
   grid-column-end: 5;
 }
+
+[type="email"]:not:focus + #hint {
+  transform: scale(0);
+  transition-timing-function: ease;
+}
+
+
+#hint {
+  transform-origin: 1.4em -.4em;
+}
+
 /*  grid mobile */
 
 
@@ -252,11 +311,50 @@ img {
   width: 50vw;
 }
 
-svg {
+[name="rating"] {
+  position: absolute;
+  left: -999px;
+}
+
+label > svg {
   width: 10vw;
   filter: grayscale(80%) blur(0.3em);
 }
 
-svg:hover {
-  filter: none;
+[name="rating"]:checked  + label > svg {
+  filter:none;
+  animation: animationBounce .2s cubic-bezier(.1,.25,1,.25);
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label::before {
+	content: '\a0';
+	display: inline-block;
+	width: .8em;
+	height: .8em;
+  margin-top: 1em;
+	margin-right: .2em;
+	border-radius: .2em;
+	background: rgba(211, 211, 211, 1);
+	text-indent: .15em;
+	line-height: .65;
+}
+
+input[type="checkbox"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"]:checked + label::before {
+	content: '\2713';
+	background: var(--bg-color-one);
+}
+
+input[type="checkbox"]:focus + label::before {
+	box-shadow: 0 0 .1em .1em #58a;
 }

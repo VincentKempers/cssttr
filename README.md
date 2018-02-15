@@ -35,5 +35,18 @@ This is an planning that roughly translates what I want to do and what I already
 
 
 
+## Going in depth -> week 2
+
+- [ ] Redo responsive design
+- [x] Applying paragraphs in the design as much as possible
+  - [ ] spinner
+  - [ ] Transistions on :hover and :focus
+  - [ ] Cursor
+  - [ ] Extending the clickable area
+  - [ ] _psuedo_ random background
+  - [ ] validation form
+- [ ] Document what you I did
+
+
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
