@@ -12,6 +12,14 @@
        local("Tahoma");
 }
 
+@media (reduced-motion) {
+  :root {
+  --transition: 0;
+  }
+}
+
+/* font for ampersand */
+
 @font-face {
   font-family: Ampersand;
   src: local('Cochin-Italic'),
@@ -19,23 +27,25 @@
   unicode-range: U+26;
 }
 
+/* Keyframes for the bounce animation */
+
 @keyframes animationBounce {
   60%, 80%, to {
-    transform: translateY(2em);
+    transform: translateY(1em);
     animation-timing-function: ease;
-    }
-    70% {
-      transform: translateY(1em);
     }
     90% {
       transform: translateY(0em);
     }
 }
 
+/* variables */
+
 :root {
   --bg-color-one: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
   --bg-color-two: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1));
   --grid-standard-template: 8% auto 8%;
+  --transition: 200ms ease;
 }
 
 *{
@@ -97,7 +107,7 @@ nav ul li > a {
 
 /* header styling */
 
-header{
+header {
   background: var(--bg-color-one);
   height: 100vh;
   width: 100vw;
@@ -134,8 +144,12 @@ progress {
 
   width: 18rem;
   height: 1rem;
-  border: none;
+  background-color: white;
+  padding: .5em;
+}
 
+progress[value]::-webkit-appearance {
+  background-color: white;
 }
 
 main nav > h1, progress, p, ol {
@@ -213,28 +227,37 @@ section > form {
   grid-column-end: 2;
 }
 
+section > form > textarea {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+
 [name="field-message"] {
+  grid-column-start: 2;
+  grid-column-end: 4;
   resize: none;
 }
 
 [for="field-message"] {
-  background: white;
+  display: none;
 }
 
 section form > button {
   grid-column-start: 4;
-  grid-column-end: 4;
+  grid-column-end: 5;
+  margin: 2em 0 2em 0;
+  justify-self:center;
 }
 
 button[type="submit"] {
   border-radius: 1rem 1rem 1rem 1rem;
-  outline-radius: 1rem 1rem 1rem 1rem;
   padding: 1.5em;
   width: 15em;
-  margin-left: 4em;
   background-color: black;
   color: white;
   border: none;
+  font-weight: bold;
 }
 
 li footer:last-child {
@@ -267,6 +290,7 @@ form > label {
   grid-column-end: 5;
 }
 
+
 [type="checkbox"] {
   grid-column-start: 2;
   grid-column-end: 2;
@@ -281,14 +305,36 @@ form > a {
   grid-column-start: 3;
   grid-column-end: 5;
 }
-form > button {
+body > form > button {
   grid-column-start: 3;
   grid-column-end: 5;
+  margin: 2em 0 2em 0;
+}
+
+input {
+  padding: .25em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  transition: all ease .2s;
+  z-index:2;
+}
+
+input:focus {
+  transform: scale(1.01, 1.01);
+}
+
+[type="email"]:invalid {
+  background: rgba(255,0,0,.1);
+}
+
+[type="email"]:valid {
+  background: rgba(0,255,0,.1);
 }
 
 [type="email"]:not:focus + #hint {
-  transform: scale(0);
-  transition-timing-function: ease;
+  transform: scale(5);
+  transition: transform .5s ease;
 }
 
 #hint {
@@ -312,7 +358,7 @@ label > svg {
 }
 
 [name="rating"]:checked  + label > svg {
-  filter:none;
+  filter: none;
   animation: animationBounce .2s cubic-bezier(.1,.25,1,.25);
 }
 
@@ -326,8 +372,7 @@ input[type="checkbox"] + label::before {
 	display: inline-block;
 	width: .8em;
 	height: .8em;
-  margin-top: 1em;
-	margin-right: .2em;
+  margin: 1em .2em 0 0;
 	border-radius: .2em;
 	background: rgba(211, 211, 211, 1);
 	text-indent: .15em;
