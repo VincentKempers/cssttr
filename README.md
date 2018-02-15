@@ -47,6 +47,7 @@ This is an planning that roughly translates what I want to do and what I already
   - [x] validation form
 - [x] Document what you I did
 - [x] added the reduce animation media query
+- [ ] add a new page for information about the course!
 
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
