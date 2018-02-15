@@ -46,7 +46,7 @@ This is an planning that roughly translates what I want to do and what I already
   - [x] _psuedo_ random background
   - [x] validation form
 - [x] Document what you I did
-
+- [x] added the reduce animation media query
 
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
