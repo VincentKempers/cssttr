@@ -10,8 +10,8 @@ This is an planning that roughly translates what I want to do and what I already
 | Week 1  | Week 2 | Week 4|
 | --------| ------ | ----- |
 | Research | Research | Code |
-| Research/Code | Testing new things/Code | Code |
-| Research/Code | Code | Code |
+| Research/Code | Testing new things | Code |
+| Research/Code | Research | Code |
 | Testing new things | Document it/ Code | Document it/Code |
 | Document | Code | Code |
 
@@ -39,13 +39,13 @@ This is an planning that roughly translates what I want to do and what I already
 
 - [x] Redo responsive design
 - [x] Applying paragraphs in the design as much as possible
-  - [ ] spinner
+  - [ ] Spinner
   - [x] Transistions on :hover and :focus
   - [x] Cursor
   - [x] Extending the clickable area
-  - [ ] _psuedo_ random background
-  - [ ] validation form
-- [ ] Document what you I did
+  - [x] _psuedo_ random background
+  - [x] validation form
+- [x] Document what you I did
 
 
 ## refrences

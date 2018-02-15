@@ -365,6 +365,7 @@ img {
 
 [for="rating-0"],[for="rating-1"],[for="rating-2"],[for="rating-3"]{
   content: '';
+  /* content animation ! */
 }
 
 label > svg {
