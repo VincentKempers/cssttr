@@ -291,7 +291,7 @@ form > label {
 
 [type="email"], [type="password"] {
   grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column-end: 4;
 }
 
 
@@ -321,7 +321,7 @@ input {
   margin-bottom: 1em;
   width: 100%;
   transition: var(--transition);
-  z-index:2;
+  /* z-index:2; */
 }
 
 input:focus {
@@ -336,13 +336,20 @@ input:focus {
   background: rgba(0,255,0,.1);
 }
 
-[type="email"]:not:focus + #hint {
-  transform: scale(5);
+[type="email"]:not(:focus) + #hint {
+  transform: scale(0);
   transition: var(--transition);
 }
 
 #hint {
-  transform-origin: 1.4em -.4em;
+  transition: var(--transition) transform;
+	max-width: 20em;
+	padding: .6em .8em;
+	border-radius: .3em;
+	margin-left: 1em;
+  margin-top: -.5em;
+	box-shadow: .05em .2em .3em rgba(0,0,0,.2);
+	font-size: 75%;
 }
 
 /*  grid mobile */
