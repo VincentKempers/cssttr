@@ -39,16 +39,19 @@ This is an planning that roughly translates what I want to do and what I already
 
 - [x] Redo responsive design
 - [x] Applying paragraphs in the design as much as possible
-  - [x] Spinner (learn to make a sequence)
-  - [x] Transistions on :hover and :focus
-  - [x] Cursor
-  - [x] Extending the clickable area
-  - [x] _psuedo_ random background
-  - [x] validation form
-- [x] Document what you I did
-- [x] added the reduce animation media query
+  - [x] Spinner (learn to make a sequence).
+  - [x] Transistions on :hover and :focus/
+  - [x] Cursor.
+  - [x] Extending the clickable area.
+  - [x] _psuedo_ random background.
+  - [x] validation form.
+- [x] Document what you I did.
 - [x] added some gradient art.
-- [x] added some small animations
+- [x] added some small animations.
+- [x] Research about color blindness.
+- [x] Added programs and tweaked(thanks Vasilis) some colors in design to get a AA ranking on colorblindness.
+- [x] Research more about accessibility.
+- [x] added the reduce animation media query.
 
 
 ## Going in depth -> week 3
