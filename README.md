@@ -39,7 +39,7 @@ This is an planning that roughly translates what I want to do and what I already
 
 - [x] Redo responsive design
 - [x] Applying paragraphs in the design as much as possible
-  - [ ] Spinner
+  - [x] Spinner (learn to make a sequence)
   - [x] Transistions on :hover and :focus
   - [x] Cursor
   - [x] Extending the clickable area
@@ -47,7 +47,18 @@ This is an planning that roughly translates what I want to do and what I already
   - [x] validation form
 - [x] Document what you I did
 - [x] added the reduce animation media query
-- [ ] add a new page for information about the course!
+- [x] added some gradient art.
+- [x] added some small animations
+
+
+## Going in depth -> week 3
+- [ ] tweaking responsive design
+- [ ] added a new page for information about the course!
+- [ ] Made a better Navigation bar.
+- [ ] Making a better Navigation with microinteractions.
+- [ ] Spinner animation.
+- [ ] added some small animations
+
 
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
