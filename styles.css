@@ -51,7 +51,7 @@
   --grid-standard-template: 8% auto 8%;
   --transition: 200ms ease;
   --animation-bounce: animationBounce .2s cubic-bezier(.1,.25,1,.25);
-  --animation-fadein: animationFadeIn 1.5s cubic-bezier(.1,.25,1,.25);
+  --animation-fadein: animationFadeIn 1.8s cubic-bezier(.1,.25,1,.25);
 }
 
 /* media query for the reduced motion function to stop all transitions*/
@@ -60,6 +60,7 @@
   :root {
   --transition: 0;
   --animation-bounce: 0;
+  --animation-fadein: 0;
   }
 }
 
