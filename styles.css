@@ -56,7 +56,7 @@
 
 /* media query for the reduced motion function to stop all transitions*/
 
-@media (reduced-motion) {
+@media screen and (prefers-reduced-motion: reduce) {
   :root {
   --transition: 0;
   --animation-bounce: 0;
