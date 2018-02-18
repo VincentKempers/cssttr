@@ -394,7 +394,6 @@ label > svg {
 [name="rating"]:focus + label > svg {
   filter: none;
   animation: var(--animation-bounce);
-  transform: rotateX(2deg); var(--transform);
 }
 
 input[type="checkbox"] {
@@ -422,7 +421,7 @@ input[type="checkbox"]:disabled + label::before {
 
 input[type="checkbox"]:checked + label::before {
 	content: '\2713';
-	background: var(--bg-color-one);
+  background-color: lightgreen;
 }
 
 input[type="checkbox"]:focus + label::before {
