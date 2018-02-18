@@ -61,6 +61,7 @@
   --bg-color-one: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
   --bg-color-two: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1));
   --grid-standard-template: 8% auto 8%;
+  --grid-desktop-template: 25% 25% 25% 25%;
   --transition: .5s ease;
   --animation-bounce: animationBounce .2s cubic-bezier(.1,.25,1,.25);
   --animation-fadein: animationFadeIn 1.8s cubic-bezier(.1,.25,1,.25);
@@ -153,7 +154,6 @@ nav ul li > a {
 header {
   background: var(--bg-color-one);
   height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,6 +164,10 @@ h2 {
   animation: var(--animation-fadein);
 }
 
+img {
+  width: 35vw;
+}
+
 /* first Article styling  */
 
 main article:first-of-type > h1, img, p {
@@ -172,6 +176,30 @@ main article:first-of-type > h1, img, p {
   justify-self: center;
 }
 
+@media screen and (min-width: 60em) {
+  main article:first-of-type {
+    grid-template-columns: 13% auto 34% 13%;
+  }
+}
+
+
+@media screen and (min-width: 60em) {
+  main article:first-of-type > h1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+
+  main article:first-of-type > img {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: cover;
+  }
+
+  main article:first-of-type > p {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+}
 
 article > h1, img, p  {
   margin-bottom: 1em;
@@ -183,7 +211,7 @@ main > nav {
   padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
-  height: 100vw;
+  height: 45vw;
 }
 
 
@@ -224,11 +252,14 @@ article {
   padding: 2em 0 2em 0;
 }
 
+
+
 article > h1, figure {
   grid-column-start:2;
   grid-column-end:2;
   justify-self: center;
 }
+
 
 figure {
   max-width: 20em;
@@ -238,6 +269,7 @@ figure {
 figure > img {
   max-width: inherit;
 }
+
 
 /* section which contains the messaging and has the textbox */
 
@@ -304,8 +336,7 @@ section form > button {
 }
 
 button[type="submit"] {
-  border-radius: 0 .5rem .5rem 0;
-  height: 7vw;
+  border-radius: .5rem .5rem .5rem .5rem;
   width: 10em;
   background-color: black;
   color: white;
@@ -321,7 +352,7 @@ li footer:last-child {
 body > [method="post"] {
   margin: 1em 0 1em 0;
   display: grid;
-  grid-template-columns: 10% 20% 25% 25% 20% 10%;
+  grid-template-columns: 10% 20%;
 }
 
 form > label {
@@ -391,9 +422,6 @@ input:focus {
 	font-size: 75%;
 }
 
-img {
-  width: 50vw;
-}
 
 
 fieldset {
