@@ -34,11 +34,23 @@
 
 @keyframes animationFadeIn {
   from {
-    opacity: 0;
-    padding-top: 2em;
-    animation-timing-function: ease;
+      opacity: 0;
+      padding-top: 2em;
+      animation-timing-function: ease;
     }
     to {
+      opacity: 1;
+    }
+}
+
+@keyframes labelFadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-1.2em);
+      animation-timing-function: ease;
+    }
+    to {
+      transform: translateY(0em);
       opacity: 1;
     }
 }
@@ -49,9 +61,10 @@
   --bg-color-one: linear-gradient(135deg, rgba(255, 184, 43, 1), rgba(255, 184, 43, 1) 20%, rgba(255, 22, 174, 1));
   --bg-color-two: linear-gradient(135deg, rgba(255, 22, 174, 1), rgba(255, 22, 174, 1) 20%, rgba(255, 184, 43, 1));
   --grid-standard-template: 8% auto 8%;
-  --transition: 200ms ease;
+  --transition: .5s ease;
   --animation-bounce: animationBounce .2s cubic-bezier(.1,.25,1,.25);
   --animation-fadein: animationFadeIn 1.8s cubic-bezier(.1,.25,1,.25);
+  --animation-labelfade: labelFadeIn .5s cubic-bezier(.1,.25,1,.25);
 }
 
 /* media query for the reduced motion function to stop all transitions*/
@@ -62,6 +75,10 @@
   --animation-bounce: 0;
   --animation-fadein: 0;
   }
+}
+
+:focus {
+  outline: rgba(255, 231, 36, 1.000) solid .2rem;
 }
 
 body {
@@ -83,6 +100,7 @@ ul {
   list-style: none;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  background-color:white;
 }
 
 nav > ul > li   {
@@ -91,31 +109,39 @@ nav > ul > li   {
   padding: .8em;
 }
 
-h2 {
-  font-family: Ampersand, Helvetica, sans-serif;
-  animation: var(--animation-fadein);
-}
 
 ul li > ul   {
   display: none;
 }
 
+ul li ul > li {
+  margin-top: 1em;
+}
 
 ul li:focus-within > ul   {
   display: block;
   position: absolute;
+  margin-top: .8em;
+  transition: position ;
+}
+
+ul li:hover > ul   {
+  display: block;
+  position: absolute;
+  margin-top: .8em;
 }
 
 nav ul li > a {
   color: black;
   text-decoration: none;
   border-bottom: .1rem solid black;
+  margin-top: 2em;
 }
 
 [href="/products"] {
   color: black;
   text-decoration: none;
-  border-bottom: .1rem dashed black;
+  line-height: .1rem solid black;
 }
 
 [href="/products"]:focus {
@@ -131,6 +157,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+h2 {
+  font-family: Ampersand, system, sans-serif;
+  animation: var(--animation-fadein);
 }
 
 /* first Article styling  */
@@ -152,33 +183,35 @@ main > nav {
   padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
-  height: 50vw;
+  height: 100vw;
 }
+
+
+/* nav section in the maincontent which has the progressbar  */
+main nav > h1, progress, p, ol {
+  grid-column-start:2;
+  grid-column-end:2;
+  justify-self: center;
+}
+
+/* progress Bar main styling */
 
 progress {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
+  background-color:white;
+  border-radius: 2em;
   width: 18rem;
   height: 1rem;
 }
 
-progress[value]::-webkit-progress-bar {
-  background-color: #eee;
+/* mozilla firefox styling of the progress bar. */
+progress[value]::-moz-progress-bar {
+  background-color: orange;
+  width: 10em;
   border-radius: 2em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-
-progress[value]::-webkit-progress-value {
-  border-radius: 2em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-
-main nav > h1, progress, p, ol {
-  grid-column-start:2;
-  grid-column-end:2;
-  justify-self: center;
 }
 
 nav article > img  {
@@ -205,6 +238,8 @@ figure {
 figure > img {
   max-width: inherit;
 }
+
+/* section which contains the messaging and has the textbox */
 
 section {
   background: linear-gradient(190deg, rgba(255, 179, 47, 1.000) 15%, #657 65%, rgba(255, 67, 137, 1.000) 0);
@@ -248,18 +283,15 @@ ol:nth-child(1) > li:nth-child(odd):hover {
 section > form {
   grid-column-start: 2;
   grid-column-end: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
-section > form > textarea {
-  grid-column-start: 2;
-  grid-column-end: 4;
-}
-
 
 [name="field-message"] {
-  grid-column-start: 2;
-  grid-column-end: 4;
   resize: none;
+  height: 7vw;
 }
 
 [for="field-message"] {
@@ -267,16 +299,14 @@ section > form > textarea {
 }
 
 section form > button {
-  grid-column-start: 4;
-  grid-column-end: 5;
   margin: 2em 0 2em 0;
   justify-self: center;
 }
 
 button[type="submit"] {
-  border-radius: 1rem 1rem 1rem 1rem;
-  padding: 1.5em;
-  width: 15em;
+  border-radius: 0 .5rem .5rem 0;
+  height: 7vw;
+  width: 10em;
   background-color: black;
   color: white;
   border: none;
@@ -288,7 +318,7 @@ li footer:last-child {
   font-size: .7em;
 }
 
-[method="post"] {
+body > [method="post"] {
   margin: 1em 0 1em 0;
   display: grid;
   grid-template-columns: 10% 20% 25% 25% 20% 10%;
@@ -365,25 +395,24 @@ img {
   width: 50vw;
 }
 
-[name="rating"] {
-  position: absolute;
-  left: -999px;
-}
 
 fieldset {
   margin: 2em 0 2em 0;
   border: none;
 }
 
-fieldset > legend:focus {
+fieldset > legend {
   display: none; 
 }
 
-[for="rating-0"],[for="rating-1"],[for="rating-2"],[for="rating-3"]{
-  content: '';
+fieldset > label {
+  display: inline-block;
+  margin: 0 2em 0 2em;
+  text-align: center;
 }
-label::after {
-  content: '';
+
+fieldset label > p {
+  visibility: hidden;
 }
 
 label > svg {
@@ -391,10 +420,26 @@ label > svg {
   filter: grayscale(80%) blur(0.3em);
 }
 
-[name="rating"]:focus + label > svg {
+[name="rating"] {
+  position: absolute;
+  left: -999px;
+}
+
+[name="rating"]:focus {
+  outline: none;
+}
+
+[name="rating"]:focus + label > svg, [name="rating"]:checked + label > svg{
   filter: none;
+  outline: none;
   animation: var(--animation-bounce);
 }
+
+[name="rating"]:focus + label > p, [name="rating"]:checked + label > p {
+  visibility: visible;
+  animation: var(--animation-labelfade);
+}
+
 
 input[type="checkbox"] {
   position: absolute;
@@ -426,4 +471,20 @@ input[type="checkbox"]:checked + label::before {
 
 input[type="checkbox"]:focus + label::before {
 	box-shadow: 0 0 .1em .1em #58a;
+}
+
+/* Browser specific  */
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2em;
+  border: .1em solid #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: rgba(250, 54, 53, 1.000);
+  border-radius: 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
