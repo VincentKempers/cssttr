@@ -101,7 +101,6 @@ ul {
   list-style: none;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  background-color:white;
 }
 
 nav > ul > li   {
@@ -433,7 +432,7 @@ fieldset {
 }
 
 fieldset > legend {
-  display: none; 
+  display: none;
 }
 
 fieldset > label {

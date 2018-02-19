@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Living Styleguide</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="greyscale.css">
+
+</head>
+<body>
+
+<h1>Living Styleguide</h1>
+
+<!-- place components or patterns here -->
+
+  <nav>
+
+    <h1>Main navigation</h1>
+
+    <ul>
+        <li><a href="styleguide.html" aria-label="Home, current page" autofocus>Home</a></li>
+        <li>
+            <a href="/products">Products</a>
+
+            <ul>
+                <li><a href="greyscale.html">greyscale</a></li>
+                <li><a href="/products/paper">Paper</a></li>
+                <li><a href="/products/scissors">Scissors</a></li>
+            </ul>
+
+        </li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+  </nav>
+  <header>
+    <h2>Welcome Marijn <span>&amp;</span> attendees</h2>
+  </header>
+  <main>
+    <article>
+      <h1><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h1>
+
+      <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car." />
+
+      <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+    </article>
+
+  <nav>
+    <h1>Are we accessibility legends now?</h1>
+
+    <progress value="0.25" max="1">25%</progress>
+    <p>Too be honest.. no.. we lack:</p>
+
+    <ol>
+        <li>
+            <a href="/cart">Experience</a>
+        </li>
+        <li>
+            <a href="#main-content" aria-label="Address, current step">Compassion</a>
+        </li>
+        <li>
+            usability > accessibility > 'pleasure'-ability
+        </li>
+        <li>
+            Contrast
+        </li>
+    </ol>
+  </nav>
+
+  <article>
+    <h1>This picture has a title</h1>
+      <figure>
+        <!-- Portrait -->
+        <!-- <img src="https://vasilis.nl/voto/fotos/klein/170126170241-we-hebben-een-bortusk-1280.jpg" alt="A drawing of a colorful monster on a newspaper" /> -->
+
+        <!-- Landscape -->
+        <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
+      <figcaption>
+        <p>
+          There's also this big and in depth description of the picture. You often see this on newssites or photo blogs. You could also replace the photo with a video if needed.
+        </p>
+        <footer>
+          <time datetime="2017-02-06">6-2-2017</time> © 2017 <a href="https://vasilis.nl">Vasilis van Gemert</a>
+        </footer>
+      </figcaption>
+    </figure>
+  </article>
+  <div class="filterstyle">
+    <svg>
+      <defs>
+        <filter id="protanopia">
+          <feColorMatrix type="matrix" values="0.567 0.433 0 0 0  	0.558 0.442 0 0 0  		0 0.242 0.758 0 0  		0 0 0 1 0"></feColorMatrix>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+</body>
+</html>
