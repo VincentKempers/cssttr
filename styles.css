@@ -165,8 +165,9 @@ h2 {
 }
 
 img {
-  width: 35vw;
+  width: 50vw;
 }
+
 
 /* first Article styling  */
 
@@ -192,7 +193,7 @@ main article:first-of-type > h1, img, p {
   main article:first-of-type > img {
     grid-column-start: 2;
     grid-column-end: 3;
-    justify-self: cover;
+    width: 35vw;
   }
 
   main article:first-of-type > p {
@@ -211,7 +212,6 @@ main > nav {
   padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
-  height: 45vw;
 }
 
 
@@ -242,9 +242,6 @@ progress[value]::-moz-progress-bar {
   border-radius: 2em;
 }
 
-nav article > img  {
-  width: 60%;
-}
 
 article {
   display: grid;
@@ -283,7 +280,6 @@ section {
 
 section > ol {
   list-style: none;
-  width: 50vw;
   padding: 0;
   grid-column-start: 2;
   grid-column-end: 2;
@@ -323,8 +319,13 @@ section > form {
 
 [name="field-message"] {
   resize: none;
-  height: 7vw;
+  height: 4vw;
+  min-width: 20vw;
+  border: none;
+  padding: 1em;
+  border-radius: 1em;
 }
+
 
 [for="field-message"] {
   display: none;
@@ -337,7 +338,9 @@ section form > button {
 
 button[type="submit"] {
   border-radius: .5rem .5rem .5rem .5rem;
-  width: 10em;
+  min-width: 10vw;
+  padding: 2em;
+  margin-left: 2em;
   background-color: black;
   color: white;
   border: none;
