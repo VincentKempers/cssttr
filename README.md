@@ -55,20 +55,29 @@ This is an planning that roughly translates what I want to do and what I already
 
 
 ## Going in depth -> week 3
-- [ ] tweaking responsive design
-- [ ] added a new page for information about the course!
-- [ ] Made a better Navigation bar.
-- [ ] Making a better Navigation with microinteractions.
+- [x] tweaking responsive design
+- [x] added a page named colorblindness to check te filters.
+- [x] Made a better Navigation bar.
+- [x] Making a better Navigation with microinteractions.
 - [ ] Spinner animation.
-- [ ] added some small animations
+- [x] added some small animations
+- [x] fixed font-sizes for input fields.
 
 
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
-https://developer.mozilla.org/en-US/docs/Web/CSS/animation
-https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state
-https://stackoverflow.com/questions/2701192/what-characters-can-be-used-for-up-down-triangle-arrow-without-stem-for-displa#2701226
-https://en.wikipedia.org/wiki/Arrow_%28symbol%29#Arrows_in_Unicode
-https://stackoverflow.com/questions/10843880/css3-button-background-color-infinite-transition#10845083
-https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+[animation mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+[unicode explaination by user bobince](https://stackoverflow.com/questions/2701192/what-characters-can-be-used-for-up-down-triangle-arrow-without-stem-for-displa#2701226)
+[Arrow unicode wiki](https://en.wikipedia.org/wiki/Arrow_%28symbol%29#Arrows_in_Unicode)
+[background transistion mdn](https://stackoverflow.com/questions/10843880/css3-button-background-color-infinite-transition#10845083)
+[transistions on mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+[Form states - Codepen from Joost Faber](https://codepen.io/joostf/pen/VKyPxk)
+
+[CSS Secrets van Lea Verou](http://shop.oreilly.com/product/0636920031123.do)
+  - Loading spinner — 8.43
+  - Transitions op :hovers en :focus—8.42
+  - Cursor—6.29
+  - Extending the clickable area—6.30
+  - Custom checkboxes—6.31
+  - (Pseudo)random background—2.7
 

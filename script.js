@@ -6,8 +6,6 @@ let buttons = document.getElementsByTagName('button');
 let body = document.getElementsByTagName('body');
 
 
-
-
 for (var i =0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function(event) {
     if (event.target.value) {
