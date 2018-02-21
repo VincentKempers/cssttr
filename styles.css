@@ -151,7 +151,7 @@ ul li ul > li {
   margin-top: 1em;
 }
 
-ul li:hover:focus-within > ul   {
+ul li:focus-within > ul   {
   display: block;
   position: absolute;
   margin-top: .8em;
@@ -300,9 +300,7 @@ figure {
 
 figure > img {
   max-width: inherit;
-}
-
-
+} 
 /* section which contains the messaging and has the textbox */
 
 section {
