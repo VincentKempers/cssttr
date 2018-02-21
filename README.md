@@ -65,3 +65,10 @@ This is an planning that roughly translates what I want to do and what I already
 
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
+https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state
+https://stackoverflow.com/questions/2701192/what-characters-can-be-used-for-up-down-triangle-arrow-without-stem-for-displa#2701226
+https://en.wikipedia.org/wiki/Arrow_%28symbol%29#Arrows_in_Unicode
+https://stackoverflow.com/questions/10843880/css3-button-background-color-infinite-transition#10845083
+https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+
