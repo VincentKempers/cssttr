@@ -1,3 +1,5 @@
+
+/* font styles: using system fonts*/
 @font-face {
   font-family: system;
   font-style: normal;
@@ -67,6 +69,18 @@
     }
 }
 
+@keyframes backgroundAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position:0% 50%;
+    }
+}
+
 /* variables */
 
 :root {
@@ -78,6 +92,7 @@
   --animation-bounce: animationBounce .2s cubic-bezier(.1,.25,1,.25);
   --animation-fadein: animationFadeIn 1.8s cubic-bezier(.1,.25,1,.25);
   --animation-labelfade: labelFadeIn .5s cubic-bezier(.1,.25,1,.25);
+  --animation-background: backgroundAnimation 20s ease infinite;
 }
 
 /* media query for the reduced motion function to stop all transitions*/
@@ -87,13 +102,16 @@
   --transition: 0;
   --animation-bounce: 0;
   --animation-fadein: 0;
+  --animation-background: 0;
   }
 }
 
+/*for knowing where you are use outline animation for every focus*/
 :focus {
-  animation: pulseGrow 1s infinite;
+  animation: pulseGrow 1.8s infinite;
 }
 
+/* sort of reset ? hate those margins!*/
 body {
   margin: 0;
   font-family: "system";
@@ -103,6 +121,8 @@ body {
 body > h1:first-of-type, body > nav:first-of-type > h1 {
   display: none;
 }
+
+/* Navigation bar on the main page*/
 
 body > nav:first-of-type {
   position: absolute;
@@ -166,6 +186,8 @@ nav ul li > a {
 
 header {
   background: var(--bg-color-one);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 20s ease infinite;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -222,6 +244,7 @@ article > h1, img, p  {
 main > nav {
   background: linear-gradient(19deg, rgba(255, 179, 47, 1.000) 15%, #657 65%, rgba(255, 67, 137, 1.000) 0);
   background-size: 9% 100%;
+  animation: backgroundAnimation 20s ease infinite;
   padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
@@ -262,10 +285,6 @@ article {
   padding: 2em 0 2em 0;
 }
 
-/*a:focus {
-  
-}*/
-
 
 article > h1, figure {
   grid-column-start:2;
@@ -289,6 +308,7 @@ figure > img {
 section {
   background: linear-gradient(190deg, rgba(255, 179, 47, 1.000) 15%, #657 65%, rgba(255, 67, 137, 1.000) 0);
   background-size: 9% 100%;
+  animation: backgroundAnimation 20s ease infinite;
   padding: 2em 0 2em 0;
   display: grid;
   grid-template-columns: var(--grid-standard-template);
