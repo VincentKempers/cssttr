@@ -26,8 +26,8 @@
 
 @keyframes animationBounce {
   60%, 80%, to {
-    transform: translateY(1em);
-    animation-timing-function: ease;
+      transform: translateY(1em);
+      animation-timing-function: ease;
     }
     90% {
       transform: translateY(0em);
@@ -39,7 +39,7 @@
     transform: translateY(0em);
   }
   50% {
-    transform: translateY(.2em);
+    transform: translateY(.5em);
   }
   100% {
     transform: translateY(0em);
@@ -107,8 +107,8 @@
 }
 
 /*for knowing where you are use outline animation for every focus*/
-:focus {
-  animation: pulseGrow 1.8s infinite;
+:focus{
+  animation: pulseGrow 1.5s infinite;
 }
 
 /* sort of reset ? hate those margins!*/
@@ -139,7 +139,7 @@ ul {
 nav > ul > li   {
   justify-self: center;
   align-self: center;
-  padding: .8em;
+  padding: .8em .8em .2em .8em;
 }
 
 
@@ -151,7 +151,7 @@ ul li ul > li {
   margin-top: 1em;
 }
 
-ul li:focus-within > ul   {
+ul li:hover:focus-within > ul   {
   display: block;
   position: absolute;
   margin-top: .8em;
@@ -355,10 +355,11 @@ section > form {
 
 [name="field-message"] {
   resize: none;
-  height: 4vw;
+  min-height: 7vw;
   min-width: 20vw;
   border: none;
   padding: 1em;
+  margin: 1em;
   border-radius: 1em;
 }
 
@@ -372,7 +373,7 @@ section form > button {
   justify-self: center;
 }
 
-button[type="submit"] {
+button {
   margin-left: 2em;
   background-color: black;
   color: white;
@@ -435,11 +436,11 @@ input:focus {
   transform: scale(1.01, 1.01);
 }
 
-[type="email"]:invalid {
+[type="email"]:focus:required:invalid, [type="password"]:focus:required:invalid {
   background: rgba(255,0,0,.1);
 }
 
-[type="email"]:valid {
+[type="email"]:focus:required:valid, [type="password"]:focus:required:valid {
   background: rgba(0,255,0,.1);
 }
 
@@ -569,3 +570,44 @@ footer > [name="rating"]:focus + body, [name="rating"]:checked + body{
   visibility: visible;
   animation: var(--animation-labelfade);
 }
+
+form > [href="styleguide.html"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* styles for grayscale html!*/
+
+
+body > footer {
+  width: 100vw;
+}
+
+body > footer > svg { 
+  display: none; 
+}
+
+body > footer > section { 
+  background: none;
+  display: grid;
+  grid-template-columns: 8% auto 8%;
+}
+
+body footer section > button {
+  margin-bottom: 1em;
+  justify-self: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+@media  screen and (min-width: 40em) {
+  body > footer > section {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  body footer section > button {
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
+}
+
