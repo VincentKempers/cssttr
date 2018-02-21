@@ -32,6 +32,18 @@
     }
 }
 
+@keyframes pulseGrow {
+  0% {
+    outline: rgba(255, 231, 36, 1.000) solid .2rem;
+  }
+  50% {
+    outline: rgba(255, 231, 36, 0) solid 0rem;
+  }
+  100% {
+    outline: rgba(255, 231, 36, 1.000) solid .2rem;
+  }
+}
+
 @keyframes animationFadeIn {
   from {
       opacity: 0;
@@ -79,7 +91,7 @@
 }
 
 :focus {
-  outline: rgba(255, 231, 36, 1.000) solid .2rem;
+  animation: pulseGrow 1s infinite;
 }
 
 body {
@@ -101,7 +113,7 @@ ul {
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
 nav > ul > li   {
@@ -232,7 +244,7 @@ progress {
 
   background-color:white;
   border-radius: 2em;
-  width: 18rem;
+  width: 18em;
   height: 1rem;
 }
 
@@ -250,6 +262,9 @@ article {
   padding: 2em 0 2em 0;
 }
 
+/*a:focus {
+  
+}*/
 
 
 article > h1, figure {
@@ -430,9 +445,6 @@ fieldset > label {
   text-align: center;
 }
 
-fieldset label > p {
-  visibility: hidden;
-}
 
 label > svg {
   width: 5vw;
