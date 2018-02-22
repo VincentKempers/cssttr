@@ -22,7 +22,7 @@ This is an planning that roughly translates what I want to do and what I already
 - [x] Designing the website (in rough lines)
 - [x] Using grid to make it semi responsive
 - [x] Improve the Grid
-- [ ] Redo responsive design
+- [x] Redo responsive design
 - [x] Styling the main things
 - [x] Reading paragraphs
 - [x] Applying paragraphs in the design as much as possible
@@ -59,7 +59,7 @@ This is an planning that roughly translates what I want to do and what I already
 - [x] added a page named colorblindness to check te filters.
 - [x] Made a better Navigation bar.
 - [x] Making a better Navigation with microinteractions.
-- [ ] Spinner animation.
+- [x] Spinner animation.
 - [x] added some small animations
 - [x] fixed font-sizes for input fields.
 
