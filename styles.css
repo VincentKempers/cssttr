@@ -668,7 +668,7 @@ body > footer {
 }
 
 body > footer > svg { 
-  display: none; 
+  visibility: hidden 
 }
 
 body > footer > section { 
