@@ -66,14 +66,14 @@ This is an planning that roughly translates what I want to do and what I already
 
 ## refrences
 Rating example makes use of Emoji from: http://emojione.com
-[animation mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
-[unicode explaination by user bobince](https://stackoverflow.com/questions/2701192/what-characters-can-be-used-for-up-down-triangle-arrow-without-stem-for-displa#2701226)
-[Arrow unicode wiki](https://en.wikipedia.org/wiki/Arrow_%28symbol%29#Arrows_in_Unicode)
-[background transistion mdn](https://stackoverflow.com/questions/10843880/css3-button-background-color-infinite-transition#10845083)
-[transistions on mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
-[Form states - Codepen from Joost Faber](https://codepen.io/joostf/pen/VKyPxk)
+- [animation mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+- [unicode explaination by user bobince](https://stackoverflow.com/questions/2701192/what-characters-can-be-used-for-up-down-triangle-arrow-without-stem-for-displa#2701226)
+- [Arrow unicode wiki](https://en.wikipedia.org/wiki/Arrow_%28symbol%29#Arrows_in_Unicode)
+- [background transistion mdn](https://stackoverflow.com/questions/10843880/css3-button-background-color-infinite-transition#10845083)
+- [transistions on mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+- [Form states - Codepen from Joost Faber](https://codepen.io/joostf/pen/VKyPxk)
 
-[CSS Secrets van Lea Verou](http://shop.oreilly.com/product/0636920031123.do)
+- [CSS Secrets van Lea Verou](http://shop.oreilly.com/product/0636920031123.do)
   - Loading spinner — 8.43
   - Transitions op :hovers en :focus—8.42
   - Cursor—6.29
